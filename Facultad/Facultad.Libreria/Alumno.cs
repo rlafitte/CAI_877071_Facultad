@@ -14,7 +14,7 @@ namespace Facultad.Libreria
 
         public override string GetCredencial()
         {
-            return $"Código {this.Codigo}) {GetNombreCompleto()}";
+            return $"Código {this.Codigo}) {this.GetNombreCompleto()}";
         }
         public string ToString()
         {
