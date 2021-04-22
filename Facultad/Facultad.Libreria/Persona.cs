@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Facultad.Libreria
 {
-    public class Persona
+    public abstract class Persona
     {
         private string _apellido;
         private DateTime _fechaNac;
@@ -16,13 +16,11 @@ namespace Facultad.Libreria
         public DateTime FechaNac { get => _fechaNac; set => _fechaNac = value; }
         public string Nombre { get => _nombre; set => _nombre = value; }
 
-        public virtual string GetCredencial()
+        public abstract string GetCredencial();
+        
+        public virtual string GetNombreCompleto()
         {
-            return GetNombreCompleto();
-        }
-        private string GetNombreCompleto()
-        {
-            return $"{this._nombre} - {this._apellido}";
+            return $"{this.Apellido}, {this.Nombre}";
         }
     }
 }
