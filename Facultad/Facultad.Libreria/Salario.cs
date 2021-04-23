@@ -18,14 +18,15 @@ namespace Facultad.Libreria
         public double Descuentos { get => _descuentos; set => _descuentos = value; }
         public DateTime Fecha { get => _fecha; set => _fecha = value; }
 
+        
         public double GetSalarioNeto()
         {
             return (this.Bruto * 0.83); //asumimos fuera de ganancias y convenio laboral básico
         }
 
-        public double Salario()
+        public Salario(double gross)
         {
-            return this.Bruto;
+            this.Bruto = gross;
         }
 
     }
