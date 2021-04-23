@@ -106,32 +106,64 @@ namespace Facultad.Consola
         }
         public void AgregarAlumno()
         {
+            Alumno A = new Alumno();
             try
             {
                 Console.WriteLine("Ingrese el código de alumno");
-                ValidaNumerico(Console.ReadLine());
+                A.Codigo=ValidaNumerico(Console.ReadLine());
+                ValidaExistencia(A.Codigo);
+                Console.WriteLine("Ingrese el nombre del alumno");
+                A.Nombre = Console.ReadLine();
+                Console.WriteLine("Ingrese el apellido del alumno");
+                A.Apellido = Console.ReadLine();
+                _alumnos.Add(A);
             }
             catch (ValorNoNumerico ex)
             {
                 Console.WriteLine(ex.Message);
+            }
+            catch (AlumnoExistente ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            catch
+            {
+
             }
         }
         public void Salir()
         {
             this.Flag = false;
         }
-        public bool ValidaNumerico(string s)
+        public int ValidaNumerico(string s)
         {
             int i;
             if (int.TryParse(s, out i))
             {
-                return true;
+                return i;
             }
             else
             {
                 throw new ValorNoNumerico();
                 i = -1;
-                return false;
+                return i;
+            }
+        } 
+        public void ValidaExistencia (int i)
+        {
+            Alumno aux;
+            try
+            {
+                aux = _alumnos.FirstOrDefault(o => o.Codigo == i);
+                if (aux.Codigo != null)
+                {
+                    throw new AlumnoExistente();
+
+                }
+            }
+            catch (NullReferenceException)
+            {
+
             }
         }
     }

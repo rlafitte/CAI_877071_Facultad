@@ -17,5 +17,9 @@ namespace Facultad.Libreria
     public class ValorNoNumerico: Exception
     {
         public ValorNoNumerico() : base("El valor ingresado no es numérico") { }
+    }    
+    public class AlumnoExistente: Exception
+    {
+        public AlumnoExistente() : base("El alumno ya existe") { }
     }
 }
