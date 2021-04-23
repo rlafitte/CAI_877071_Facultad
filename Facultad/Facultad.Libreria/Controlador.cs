@@ -11,7 +11,7 @@ namespace Facultad.Libreria
     public class Controlador
     {
         public List<Empleado> _empleados;
-        public List<Alumno> _alumnos;
+        public List<Alumno> _alumnos = new List<Alumno>();
         
         public string AgregarAlumno(Alumno A)
         {

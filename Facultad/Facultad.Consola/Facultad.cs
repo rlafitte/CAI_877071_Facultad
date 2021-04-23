@@ -16,6 +16,7 @@ namespace Facultad.Consola
         public List<Empleado> _empleados;
         private string _nombre;
         private bool flag;
+        Controlador C = new Controlador();
         public Facultad()
         {
             flag = true;
@@ -77,7 +78,7 @@ namespace Facultad.Consola
         }
         public void Ejecutar(int i)
         {
-            Controlador C = new Controlador();
+
             switch (i)
             {
                 case 1: //"1 - Agregar Alumno"
@@ -93,6 +94,14 @@ namespace Facultad.Consola
                         A.Apellido = Console.ReadLine();
                         C.AgregarAlumno(A);
 
+                    }
+                    catch (AlumnoExistente ex)
+                    {
+                        Console.WriteLine(ex.Message);
+                    }
+                    catch (ValorNoNumerico ex)
+                    {
+                        Console.WriteLine(ex.Message);
                     }
                     catch
                     {
