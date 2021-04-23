@@ -1,0 +1,6 @@
+C:\Users\renar\Desktop\CAI\integrador-facultad-c6d43d3dbe5841148af44ebabbb7df8c\CAI_877071_Facultad\Facultad\Facultad.Libreria\bin\Debug\Facultad.Libreria.dll
+C:\Users\renar\Desktop\CAI\integrador-facultad-c6d43d3dbe5841148af44ebabbb7df8c\CAI_877071_Facultad\Facultad\Facultad.Libreria\bin\Debug\Facultad.Libreria.pdb
+C:\Users\renar\Desktop\CAI\integrador-facultad-c6d43d3dbe5841148af44ebabbb7df8c\CAI_877071_Facultad\Facultad\Facultad.Libreria\obj\Debug\Facultad.Libreria.csprojAssemblyReference.cache
+C:\Users\renar\Desktop\CAI\integrador-facultad-c6d43d3dbe5841148af44ebabbb7df8c\CAI_877071_Facultad\Facultad\Facultad.Libreria\obj\Debug\Facultad.Libreria.csproj.CoreCompileInputs.cache
+C:\Users\renar\Desktop\CAI\integrador-facultad-c6d43d3dbe5841148af44ebabbb7df8c\CAI_877071_Facultad\Facultad\Facultad.Libreria\obj\Debug\Facultad.Libreria.dll
+C:\Users\renar\Desktop\CAI\integrador-facultad-c6d43d3dbe5841148af44ebabbb7df8c\CAI_877071_Facultad\Facultad\Facultad.Libreria\obj\Debug\Facultad.Libreria.pdb

@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace Facultad.Libreria
 {
-    public class Excepciones
+    public class Excepciones : Exception
     {
+
+    }
+    public class OperacionInvalida : Exception
+    {
+        public OperacionInvalida() : base("La opción no es válida.") { }
     }
 }

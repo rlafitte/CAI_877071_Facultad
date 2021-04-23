@@ -1,0 +1,10 @@
+C:\Users\renar\Desktop\CAI\integrador-facultad-c6d43d3dbe5841148af44ebabbb7df8c\CAI_877071_Facultad\Facultad\Facultad.Consola\obj\Debug\Facultad.Consola.csprojAssemblyReference.cache
+C:\Users\renar\Desktop\CAI\integrador-facultad-c6d43d3dbe5841148af44ebabbb7df8c\CAI_877071_Facultad\Facultad\Facultad.Consola\obj\Debug\Facultad.Consola.csproj.CoreCompileInputs.cache
+C:\Users\renar\Desktop\CAI\integrador-facultad-c6d43d3dbe5841148af44ebabbb7df8c\CAI_877071_Facultad\Facultad\Facultad.Consola\bin\Debug\Facultad.Consola.exe.config
+C:\Users\renar\Desktop\CAI\integrador-facultad-c6d43d3dbe5841148af44ebabbb7df8c\CAI_877071_Facultad\Facultad\Facultad.Consola\bin\Debug\Facultad.Consola.exe
+C:\Users\renar\Desktop\CAI\integrador-facultad-c6d43d3dbe5841148af44ebabbb7df8c\CAI_877071_Facultad\Facultad\Facultad.Consola\bin\Debug\Facultad.Consola.pdb
+C:\Users\renar\Desktop\CAI\integrador-facultad-c6d43d3dbe5841148af44ebabbb7df8c\CAI_877071_Facultad\Facultad\Facultad.Consola\bin\Debug\Facultad.Libreria.dll
+C:\Users\renar\Desktop\CAI\integrador-facultad-c6d43d3dbe5841148af44ebabbb7df8c\CAI_877071_Facultad\Facultad\Facultad.Consola\bin\Debug\Facultad.Libreria.pdb
+C:\Users\renar\Desktop\CAI\integrador-facultad-c6d43d3dbe5841148af44ebabbb7df8c\CAI_877071_Facultad\Facultad\Facultad.Consola\obj\Debug\Facultad.Consola.csproj.CopyComplete
+C:\Users\renar\Desktop\CAI\integrador-facultad-c6d43d3dbe5841148af44ebabbb7df8c\CAI_877071_Facultad\Facultad\Facultad.Consola\obj\Debug\Facultad.Consola.exe
+C:\Users\renar\Desktop\CAI\integrador-facultad-c6d43d3dbe5841148af44ebabbb7df8c\CAI_877071_Facultad\Facultad\Facultad.Consola\obj\Debug\Facultad.Consola.pdb
