@@ -14,7 +14,7 @@ namespace Facultad.Libreria
         public int Legajo { get => _legajo; set => _legajo = value; }
         public DateTime FechaIngreso { get => _fechaIngreso; set => _fechaIngreso = value; }
 
-        //private List<Salario> _salarios = new List<Salario>();
+        private List<Salario> _salarios = new List<Salario>();
         public override string GetCredencial()
         {
             return $"{this.Legajo} - {this.GetNombreCompleto()} Salario $ ";
