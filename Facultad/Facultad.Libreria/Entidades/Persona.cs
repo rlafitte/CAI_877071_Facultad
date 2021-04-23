@@ -12,9 +12,9 @@ namespace Facultad.Libreria
         private DateTime _fechaNac;
         private string _nombre;
 
-        protected string Apellido { get => _apellido; set => _apellido = value; }
+        public string Apellido { get => _apellido; set => _apellido = value; }
         public DateTime FechaNac { get => _fechaNac; set => _fechaNac = value; }
-        protected string Nombre { get => _nombre; set => _nombre = value; }
+        public string Nombre { get => _nombre; set => _nombre = value; }
 
         public abstract string GetCredencial();
         
