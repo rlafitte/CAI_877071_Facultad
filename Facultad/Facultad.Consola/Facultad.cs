@@ -11,7 +11,7 @@ namespace Facultad.Consola
     public class Facultad
     {
 
-        public List<Alumno> _alumnos;
+        private List<Alumno> _alumnos;
         private int _cantidadSedes;
         public List<Empleado> _empleados;
         private string _nombre;
@@ -26,8 +26,10 @@ namespace Facultad.Consola
         public int CantidadSedes { get => _cantidadSedes; set => _cantidadSedes = value; }
         public bool Flag { get => flag; set => flag = value; }
 
+
         static void Main(string[] args)
         {
+            
             Facultad F = new Facultad();
             Console.WriteLine("Bienvenido al sistema de la facultad.");
             while (F.flag)
@@ -75,10 +77,27 @@ namespace Facultad.Consola
         }
         public void Ejecutar(int i)
         {
+            Controlador C = new Controlador();
             switch (i)
             {
                 case 1: //"1 - Agregar Alumno"
-                    AgregarAlumno();
+                    Alumno A = new Alumno();
+                    try
+                    {
+                        Console.WriteLine("Ingrese el código de alumno");
+                        A.Codigo = C.ValidaNumerico(Console.ReadLine());
+                        C.ValidaExistencia(A.Codigo);
+                        Console.WriteLine("Ingrese el nombre del alumno");
+                        A.Nombre = Console.ReadLine();
+                        Console.WriteLine("Ingrese el apellido del alumno");
+                        A.Apellido = Console.ReadLine();
+                        C.AgregarAlumno(A);
+
+                    }
+                    catch
+                    {
+
+                    }
                     break; 
                 case 2: // "2 - Agregar Empleado" 
                     AgregarEmpleado();
@@ -87,7 +106,7 @@ namespace Facultad.Consola
                 case 4: break; // "4 - Eliminar Empleado" 
                 case 5: break; // "5 - Modificar Empleado" 
                 case 6: 
-                    foreach (Alumno a in _alumnos)
+                    foreach (Alumno a in Alumnos)
                     {
                         Console.WriteLine(a.ToString());
                     }
@@ -106,33 +125,33 @@ namespace Facultad.Consola
             }
 
         }
-        public void AgregarAlumno()
-        {
-            Alumno A = new Alumno();
-            try
-            {
-                Console.WriteLine("Ingrese el código de alumno");
-                A.Codigo=ValidaNumerico(Console.ReadLine());
-                ValidaExistencia(A.Codigo);
-                Console.WriteLine("Ingrese el nombre del alumno");
-                A.Nombre = Console.ReadLine();
-                Console.WriteLine("Ingrese el apellido del alumno");
-                A.Apellido = Console.ReadLine();
-                _alumnos.Add(A);
-            }
-            catch (ValorNoNumerico ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
-            catch (AlumnoExistente ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
-            catch
-            {
+        //public void AgregarAlumno()
+        //{
+        //    Alumno A = new Alumno();
+        //    try
+        //    {
+        //        Console.WriteLine("Ingrese el código de alumno");
+        //        A.Codigo=ValidaNumerico(Console.ReadLine());
+        //        ValidaExistencia(A.Codigo);
+        //        Console.WriteLine("Ingrese el nombre del alumno");
+        //        A.Nombre = Console.ReadLine();
+        //        Console.WriteLine("Ingrese el apellido del alumno");
+        //        A.Apellido = Console.ReadLine();
+        //        _alumnos.Add(A);
+        //    }
+        //    catch (ValorNoNumerico ex)
+        //    {
+        //        Console.WriteLine(ex.Message);
+        //    }
+        //    catch (AlumnoExistente ex)
+        //    {
+        //        Console.WriteLine(ex.Message);
+        //    }
+        //    catch
+        //    {
 
-            }
-        }
+        //    }
+        //}
         public void AgregarEmpleado()
         {
             Empleado E;
@@ -189,20 +208,20 @@ namespace Facultad.Consola
         {
             this.Flag = false;
         }
-        public int ValidaNumerico(string s)
-        {
-            int i;
-            if (int.TryParse(s, out i))
-            {
-                return i;
-            }
-            else
-            {
-                throw new ValorNoNumerico();
-                i = -1;
-                return i;
-            }
-        } 
+        //public int ValidaNumerico(string s)
+        //{
+        //    int i;
+        //    if (int.TryParse(s, out i))
+        //    {
+        //        return i;
+        //    }
+        //    else
+        //    {
+        //        throw new ValorNoNumerico();
+        //        i = -1;
+        //        return i;
+        //    }
+        //} 
         public int ValidaEmpleado(string s)
         {
             int i;
@@ -223,23 +242,23 @@ namespace Facultad.Consola
             }
             return i;
         }
-        public void ValidaExistencia (int i)
-        {
-            Alumno aux;
-            try
-            {
-                aux = _alumnos.FirstOrDefault(o => o.Codigo == i);
-                if (aux.Codigo != null)
-                {
-                    throw new AlumnoExistente();
+        //public void ValidaExistencia (int i)
+        //{
+        //    Alumno aux;
+        //    try
+        //    {
+        //        aux = _alumnos.FirstOrDefault(o => o.Codigo == i);
+        //        if (aux.Codigo != null)
+        //        {
+        //            throw new AlumnoExistente();
 
-                }
-            }
-            catch (NullReferenceException)
-            {
+        //        }
+        //    }
+        //    catch (NullReferenceException)
+        //    {
 
-            }
-        }
+        //    }
+        //}
         public void ValidaExistenciaEmpleado(int i)
         {
             Empleado aux;
