@@ -11,9 +11,9 @@ namespace Facultad.Consola
     public class Facultad
     {
 
-        private List<Alumno> _alumnos;
+        public List<Alumno> _alumnos;
         private int _cantidadSedes;
-        private List<Empleado> _empleados;
+        public List<Empleado> _empleados;
         private string _nombre;
         private bool flag;
         public Facultad()
@@ -78,11 +78,7 @@ namespace Facultad.Consola
             switch (i)
             {
                 case 1: //"1 - Agregar Alumno"
-                    Alumno A = new Alumno();
-                    A.Codigo = 1;
-                    A.Apellido = "Perez";
-                    A.Nombre = "Juan";
-                    _alumnos.Add(A);
+                    AgregarAlumno();
                     break; 
                 case 2: break; // "2 - Agregar Empleado" 
                 case 3: break; // "3 - Eliminar Alumno" 
@@ -108,9 +104,35 @@ namespace Facultad.Consola
             }
 
         }
+        public void AgregarAlumno()
+        {
+            try
+            {
+                Console.WriteLine("Ingrese el código de alumno");
+                ValidaNumerico(Console.ReadLine());
+            }
+            catch (ValorNoNumerico ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
         public void Salir()
         {
             this.Flag = false;
+        }
+        public bool ValidaNumerico(string s)
+        {
+            int i;
+            if (int.TryParse(s, out i))
+            {
+                return true;
+            }
+            else
+            {
+                throw new ValorNoNumerico();
+                i = -1;
+                return false;
+            }
         }
     }
 }

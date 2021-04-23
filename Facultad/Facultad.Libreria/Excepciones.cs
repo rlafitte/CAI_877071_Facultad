@@ -14,4 +14,8 @@ namespace Facultad.Libreria
     {
         public OperacionInvalida() : base("La opción no es válida.") { }
     }
+    public class ValorNoNumerico: Exception
+    {
+        public ValorNoNumerico() : base("El valor ingresado no es numérico") { }
+    }
 }

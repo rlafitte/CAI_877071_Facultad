@@ -20,5 +20,17 @@ namespace Facultad.Libreria
         {
             return GetCredencial();
         }
+        public override bool Equals(object obj)
+        {
+            Alumno A = (Alumno)obj;
+            if (A.Codigo== this._codigo)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }
