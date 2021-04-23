@@ -114,12 +114,8 @@ namespace Facultad.Consola
                 case 3: break; // "3 - Eliminar Alumno" 
                 case 4: break; // "4 - Eliminar Empleado" 
                 case 5: break; // "5 - Modificar Empleado" 
-                case 6: 
-                    foreach (Alumno a in _alumnos)
-                    {
-                        Console.WriteLine(a.ToString());
-                    }
-
+                case 6:
+                    Console.WriteLine(C.ListarAlumnos());
                     break; // "6 - Traer Alumnos" 
                 case 7: break; // "7 - Traer Empleados por Legajo" 
                 case 8: break; // "8 - Traer Empleados" 

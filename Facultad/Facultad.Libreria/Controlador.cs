@@ -70,5 +70,14 @@ namespace Facultad.Libreria
             }
             }
         }
+        public string ListarAlumnos()
+        {
+            string msg = "";
+            foreach (Alumno a in _alumnos)
+            {
+                msg += (a.ToString() + Environment.NewLine);
+            }
+            return msg;
+        }
     }
 }
