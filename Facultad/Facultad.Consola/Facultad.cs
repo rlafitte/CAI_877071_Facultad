@@ -130,33 +130,7 @@ namespace Facultad.Consola
             }
 
         }
-        //public void AgregarAlumno()
-        //{
-        //    Alumno A = new Alumno();
-        //    try
-        //    {
-        //        Console.WriteLine("Ingrese el código de alumno");
-        //        A.Codigo=ValidaNumerico(Console.ReadLine());
-        //        ValidaExistencia(A.Codigo);
-        //        Console.WriteLine("Ingrese el nombre del alumno");
-        //        A.Nombre = Console.ReadLine();
-        //        Console.WriteLine("Ingrese el apellido del alumno");
-        //        A.Apellido = Console.ReadLine();
-        //        _alumnos.Add(A);
-        //    }
-        //    catch (ValorNoNumerico ex)
-        //    {
-        //        Console.WriteLine(ex.Message);
-        //    }
-        //    catch (AlumnoExistente ex)
-        //    {
-        //        Console.WriteLine(ex.Message);
-        //    }
-        //    catch
-        //    {
 
-        //    }
-        //}
         public void AgregarEmpleado()
         {
             Empleado E;
@@ -166,11 +140,11 @@ namespace Facultad.Consola
                     "1 - Bedel" + Environment.NewLine + 
                     "2 - Docente" + Environment.NewLine + 
                     "3 - Directivo" + Environment.NewLine);
-                int i = ValidaEmpleado(Console.ReadLine());
+                int i = C.ValidaEmpleado(Console.ReadLine());
                 switch (i)
                 {
                     case 1: E = new Bedel();
-                        ValidaExistenciaEmpleado(E.Legajo);
+                        C.ValidaExistenciaEmpleado(E.Legajo);
                         Console.WriteLine("Ingrese el nombre del empleado");
                         E.Nombre = Console.ReadLine();
                         Console.WriteLine("Ingrese el apellido del empleado");
@@ -178,7 +152,7 @@ namespace Facultad.Consola
                         _empleados.Add(E);
                         break;
                     case 2: E = new Docente();
-                        ValidaExistenciaEmpleado(E.Legajo);
+                        C.ValidaExistenciaEmpleado(E.Legajo);
                         Console.WriteLine("Ingrese el nombre del empleado");
                         E.Nombre = Console.ReadLine();
                         Console.WriteLine("Ingrese el apellido del empleado");
@@ -186,7 +160,7 @@ namespace Facultad.Consola
                         _empleados.Add(E);
                         break;
                     case 3: E = new Directivo();
-                        ValidaExistenciaEmpleado(E.Legajo);
+                        C.ValidaExistenciaEmpleado(E.Legajo);
                         Console.WriteLine("Ingrese el nombre del empleado");
                         E.Nombre = Console.ReadLine();
                         Console.WriteLine("Ingrese el apellido del empleado");
@@ -213,72 +187,9 @@ namespace Facultad.Consola
         {
             this.Flag = false;
         }
-        //public int ValidaNumerico(string s)
-        //{
-        //    int i;
-        //    if (int.TryParse(s, out i))
-        //    {
-        //        return i;
-        //    }
-        //    else
-        //    {
-        //        throw new ValorNoNumerico();
-        //        i = -1;
-        //        return i;
-        //    }
-        //} 
-        public int ValidaEmpleado(string s)
-        {
-            int i;
-            if (int.TryParse(s, out i))
-            {
-                if (i == 1 || i == 2 || i == 3)
-                {
-                    
-                }
-                else
-                {
-                    throw new CodigoEmpleado();
-                }
-            }
-            else
-            {
-                throw new ValorNoNumerico();
-            }
-            return i;
-        }
-        //public void ValidaExistencia (int i)
-        //{
-        //    Alumno aux;
-        //    try
-        //    {
-        //        aux = _alumnos.FirstOrDefault(o => o.Codigo == i);
-        //        if (aux.Codigo != null)
-        //        {
-        //            throw new AlumnoExistente();
 
-        //        }
-        //    }
-        //    catch (NullReferenceException)
-        //    {
 
-        //    }
-        //}
-        public void ValidaExistenciaEmpleado(int i)
-        {
-            Empleado aux;
-            try
-            {
-                aux = _empleados.FirstOrDefault(o => o.Legajo == i);
-                if (aux.Legajo!= null)
-                {
 
-                }
-            }
-            catch (NullReferenceException)
-            {
 
-            }
-        }
     }
 }

@@ -79,5 +79,41 @@ namespace Facultad.Libreria
             }
             return msg;
         }
+        public void ValidaExistenciaEmpleado(int i)
+        {
+            Empleado aux;
+            try
+            {
+                aux = _empleados.FirstOrDefault(o => o.Legajo == i);
+                if (aux.Legajo != null)
+                {
+
+                }
+            }
+            catch (NullReferenceException)
+            {
+
+            }
+        }
+        public int ValidaEmpleado(string s)
+        {
+            int i;
+            if (int.TryParse(s, out i))
+            {
+                if (i == 1 || i == 2 || i == 3)
+                {
+
+                }
+                else
+                {
+                    throw new CodigoEmpleado();
+                }
+            }
+            else
+            {
+                throw new ValorNoNumerico();
+            }
+            return i;
+        }
     }
 }
