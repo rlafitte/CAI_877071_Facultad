@@ -80,7 +80,9 @@ namespace Facultad.Consola
                 case 1: //"1 - Agregar Alumno"
                     AgregarAlumno();
                     break; 
-                case 2: break; // "2 - Agregar Empleado" 
+                case 2: // "2 - Agregar Empleado" 
+                    AgregarEmpleado();
+                    break; 
                 case 3: break; // "3 - Eliminar Alumno" 
                 case 4: break; // "4 - Eliminar Empleado" 
                 case 5: break; // "5 - Modificar Empleado" 
@@ -131,6 +133,58 @@ namespace Facultad.Consola
 
             }
         }
+        public void AgregarEmpleado()
+        {
+            Empleado E;
+            try
+            {
+                Console.WriteLine("Ingrese el tipo de empleado: "+Environment.NewLine +
+                    "1 - Bedel" + Environment.NewLine + 
+                    "2 - Docente" + Environment.NewLine + 
+                    "3 - Directivo" + Environment.NewLine);
+                int i = ValidaEmpleado(Console.ReadLine());
+                switch (i)
+                {
+                    case 1: E = new Bedel();
+                        ValidaExistenciaEmpleado(E.Legajo);
+                        Console.WriteLine("Ingrese el nombre del empleado");
+                        E.Nombre = Console.ReadLine();
+                        Console.WriteLine("Ingrese el apellido del empleado");
+                        E.Apellido = Console.ReadLine();
+                        _empleados.Add(E);
+                        break;
+                    case 2: E = new Docente();
+                        ValidaExistenciaEmpleado(E.Legajo);
+                        Console.WriteLine("Ingrese el nombre del empleado");
+                        E.Nombre = Console.ReadLine();
+                        Console.WriteLine("Ingrese el apellido del empleado");
+                        E.Apellido = Console.ReadLine();
+                        _empleados.Add(E);
+                        break;
+                    case 3: E = new Directivo();
+                        ValidaExistenciaEmpleado(E.Legajo);
+                        Console.WriteLine("Ingrese el nombre del empleado");
+                        E.Nombre = Console.ReadLine();
+                        Console.WriteLine("Ingrese el apellido del empleado");
+                        E.Apellido = Console.ReadLine();
+                        _empleados.Add(E);
+                        break;
+                
+                }
+            }
+            catch (ValorNoNumerico ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            catch (CodigoEmpleado ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            catch
+            {
+
+            }
+        }
         public void Salir()
         {
             this.Flag = false;
@@ -149,6 +203,26 @@ namespace Facultad.Consola
                 return i;
             }
         } 
+        public int ValidaEmpleado(string s)
+        {
+            int i;
+            if (int.TryParse(s, out i))
+            {
+                if (i == 1 || i == 2 || i == 3)
+                {
+                    
+                }
+                else
+                {
+                    throw new CodigoEmpleado();
+                }
+            }
+            else
+            {
+                throw new ValorNoNumerico();
+            }
+            return i;
+        }
         public void ValidaExistencia (int i)
         {
             Alumno aux;
@@ -158,6 +232,22 @@ namespace Facultad.Consola
                 if (aux.Codigo != null)
                 {
                     throw new AlumnoExistente();
+
+                }
+            }
+            catch (NullReferenceException)
+            {
+
+            }
+        }
+        public void ValidaExistenciaEmpleado(int i)
+        {
+            Empleado aux;
+            try
+            {
+                aux = _empleados.FirstOrDefault(o => o.Legajo == i);
+                if (aux.Legajo!= null)
+                {
 
                 }
             }

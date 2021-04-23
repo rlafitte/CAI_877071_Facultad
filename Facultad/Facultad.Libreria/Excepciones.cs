@@ -21,5 +21,9 @@ namespace Facultad.Libreria
     public class AlumnoExistente: Exception
     {
         public AlumnoExistente() : base("El alumno ya existe") { }
+    }    
+    public class CodigoEmpleado: Exception
+    {
+        public CodigoEmpleado() : base("El codigo de empleado debe ser 1, 2, o 3") { }
     }
 }
