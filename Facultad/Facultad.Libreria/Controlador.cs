@@ -12,7 +12,18 @@ namespace Facultad.Libreria
     {
         public List<Empleado> _empleados;
         public List<Alumno> _alumnos = new List<Alumno>();
-        
+        private int _cantidadSedes;
+        private string _Nombre;
+        private bool flag=true;
+        private string _opcion;
+        private int _numericOpcion;
+      
+        public string Opcion { get => _opcion; set => _opcion = value; }
+        public bool Flag { get => flag; set => flag = value; }
+        public int CantidadSedes { get => _cantidadSedes; set => _cantidadSedes = value; }
+        public int NumericOpcion { get => _numericOpcion; set => _numericOpcion = value; }
+        public string Nombre { get => _Nombre; set => _Nombre = value; }
+
         public string AgregarAlumno(Alumno A)
         {
             try
@@ -27,7 +38,7 @@ namespace Facultad.Libreria
             }
             catch (AlumnoExistente ex)
             {
-                Console.WriteLine(ex.Message);
+                throw new AlumnoExistente();
             }
             catch
             {
@@ -45,8 +56,8 @@ namespace Facultad.Libreria
             else
             {
                 throw new ValorNoNumerico();
-                i = -1;
-                return i;
+                //i = -1;
+                //return i;
             }
         }
         public void ValidaExistencia(int i)
@@ -114,6 +125,21 @@ namespace Facultad.Libreria
                 throw new ValorNoNumerico();
             }
             return i;
+        }
+        public int OpcionElegida(string s)
+        {
+            int i = -1; //para asegurar no arrastrar valores
+            if (int.TryParse(s, out i))
+            {
+                return i;
+            }
+            else
+            {
+                throw new OperacionInvalida();
+
+            }
+            return i;
+
         }
     }
 }

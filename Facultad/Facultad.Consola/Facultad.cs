@@ -12,33 +12,35 @@ namespace Facultad.Consola
     {
 
         private List<Alumno> _alumnos;
-        private int _cantidadSedes;
+        
         public List<Empleado> _empleados;
         private string _nombre;
-        private bool flag;
+
+
         Controlador C = new Controlador();
         public Facultad()
         {
-            flag = true;
+            //flag = true;
             _alumnos = new List<Alumno>();
             _empleados = new List<Empleado>();
         }
         public string Nombre { get => _nombre; set => _nombre = value; }
-        public int CantidadSedes { get => _cantidadSedes; set => _cantidadSedes = value; }
-        public bool Flag { get => flag; set => flag = value; }
 
 
         static void Main(string[] args)
         {
-            
+
+            Controlador C = new Controlador(); 
             Facultad F = new Facultad();
             Console.WriteLine("Bienvenido al sistema de la facultad.");
-            while (F.flag)
+            while (C.Flag)
             {
             MostrarMenu();
                 try
                 {
-                F.Ejecutar(F.OpcionElegida(Console.ReadLine()));
+                C.Opcion = Console.ReadLine();
+                C.NumericOpcion = C.OpcionElegida(C.Opcion);
+                F.Ejecutar(C.NumericOpcion);
                 }
                 catch (OperacionInvalida o)
                 {
@@ -60,22 +62,7 @@ namespace Facultad.Consola
                 "9 - Traer Empleados por Nombre" + Environment.NewLine + 
                 "0 - Salir" + Environment.NewLine);
         }
-        public int OpcionElegida(string s)
-        {
-            int i;
-            if (int.TryParse(s, out i))
-            {
-                return i;
-            }
-            else
-            {
-                throw new OperacionInvalida();
-                i = -1;
-                return i;
-            }
-            return i;
 
-        }
         public void Ejecutar(int i)
         {
 
@@ -128,7 +115,7 @@ namespace Facultad.Consola
                     break;
 
             }
-
+            return;
         }
 
         public void AgregarEmpleado()
@@ -185,7 +172,7 @@ namespace Facultad.Consola
         }
         public void Salir()
         {
-            this.Flag = false;
+            C.Flag = false;
         }
 
 

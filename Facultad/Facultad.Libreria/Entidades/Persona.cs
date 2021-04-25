@@ -22,5 +22,10 @@ namespace Facultad.Libreria
         {
             return $"{this.Apellido}, {this.Nombre}";
         }
+        public int CalculaAntiguedad()
+        {
+            int i = Convert.ToInt32((System.DateTime.Now - _fechaNac));
+            return i;
+        }
     }
 }
